@@ -18,11 +18,11 @@ import javax.persistence.OneToMany;
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="TYPE_CTE",discriminatorType=DiscriminatorType.STRING,length=2)
-public class Compte implements Serializable{
+public abstract class Compte implements Serializable{
 	@Id
 	private String codeCompte;
 	private Date datecreation;
-	private Double solde;
+	private double solde;
 	
 	@ManyToOne
 	@JoinColumn(name="CODE_CLI")
@@ -31,14 +31,15 @@ public class Compte implements Serializable{
 	@OneToMany(mappedBy="compte")
 	
 	private Collection<Operation> operations;
-	public Compte(Date datecreation, Double solde, Client client, Collection<Operation> operations) {
+	
+	
+	public Compte(String codeCompte, Date datecreation, double solde, Client client) {
 		super();
+		this.codeCompte = codeCompte;
 		this.datecreation = datecreation;
 		this.solde = solde;
 		this.client = client;
-		this.operations = operations;
 	}
-	
 	public Compte(String codeCompte, Date datecreation) {
 		super();
 		this.codeCompte = codeCompte;
@@ -60,10 +61,10 @@ public class Compte implements Serializable{
 	public void setDatecreation(Date datecreation) {
 		this.datecreation = datecreation;
 	}
-	public Double getSolde() {
+	public double getSolde() {
 		return solde;
 	}
-	public void setSolde(Double solde) {
+	public void setSolde(double solde) {
 		this.solde = solde;
 	}
 	public Client getClient() {

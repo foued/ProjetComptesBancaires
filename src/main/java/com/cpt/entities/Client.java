@@ -31,6 +31,10 @@ public class Client implements Serializable {
 		this.nom = nom;
 		this.comptes = comptes;
 	}
+	public Client(Long code) {
+		super();
+		this.code = code;
+	}
 	public Long getCode() {
 		return code;
 	}

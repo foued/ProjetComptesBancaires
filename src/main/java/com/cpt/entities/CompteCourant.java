@@ -18,21 +18,13 @@ public class CompteCourant extends Compte{
 		// TODO Auto-generated constructor stub
 	}
 
-	public CompteCourant(Date datecreation, Double solde, Client client, Collection<Operation> operations) {
-		super(datecreation, solde, client, operations);
-		// TODO Auto-generated constructor stub
-	}
-
+	
 	public CompteCourant(String codeCompte, Date datecreation) {
 		super(codeCompte, datecreation);
 		// TODO Auto-generated constructor stub
 	}
-
-	
-
-	public CompteCourant(Date datecreation, Double solde, Client client, Collection<Operation> operations,
-			Double decouvert) {
-		super(datecreation, solde, client, operations);
+	public CompteCourant(String codeCompte, Date datecreation, double solde, Client client, double decouvert) {
+		super(codeCompte, datecreation, solde, client);
 		this.decouvert = decouvert;
 	}
 

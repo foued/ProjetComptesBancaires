@@ -10,11 +10,9 @@ import javax.persistence.Entity;
 @DiscriminatorValue(value = "CE")
 public class CompteEpargne extends Compte{
 	
-	public CompteEpargne(Date datecreation, Double solde, Client client, Collection<Operation> operations,
-			double taux) {
-		super(datecreation, solde, client, operations);
-		this.taux = taux;
-	}
+	
+
+	
 
 	public double getTaux() {
 		return taux;
@@ -25,9 +23,9 @@ public class CompteEpargne extends Compte{
 		// TODO Auto-generated constructor stub
 	}
 
-	public CompteEpargne(Date datecreation, Double solde, Client client, Collection<Operation> operations) {
-		super(datecreation, solde, client, operations);
-		// TODO Auto-generated constructor stub
+	public CompteEpargne(String codeCompte, Date datecreation, double solde, Client client, double taux) {
+		super(codeCompte, datecreation, solde, client);
+		this.taux = taux;
 	}
 
 	public CompteEpargne(String codeCompte, Date datecreation) {
