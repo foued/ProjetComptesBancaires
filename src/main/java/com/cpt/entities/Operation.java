@@ -35,13 +35,14 @@ public class Operation implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Operation(Long numerooperation, Date dateoperation, double montant, Compte compte) {
+	
+	public Operation(Date dateoperation, double montant, Compte compte) {
 		super();
-		this.numerooperation = numerooperation;
 		this.dateoperation = dateoperation;
 		this.montant = montant;
 		this.compte = compte;
 	}
+
 	public Long getNumerooperation() {
 		return numerooperation;
 	}

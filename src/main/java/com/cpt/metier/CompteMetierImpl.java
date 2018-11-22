@@ -19,7 +19,8 @@ public class CompteMetierImpl implements CompteMetier {
 
 	@Override
 	public Compte consulterCompte(String codeCpt) {
-	Compte cp=cr.findOne(codeCpt);
+	//Compte cp=cr.findOne(codeCpt);
+	Compte cp=cr.findById(codeCpt).orElse(null);
 	if(cp==null)throw new RuntimeException("Compte Introuvable");
 	
 		return cp;

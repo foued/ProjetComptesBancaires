@@ -41,14 +41,14 @@ public class ProjetComptesBancaireApplication {
 	{
 		System.out.println(c.getNom());
 	}
-	System.out.println("******************Comptes*************************");
-	
-	
-	CompteMetier compteMetier=ctx.getBean(CompteMetier.class);
-	compteMetier.ajouterCompte(new CompteCourant("1", new Date(),9000, new Client(1L), 200));
-	compteMetier.ajouterCompte(new CompteCourant("2", new Date(),15000, new Client(2L), 800));
-	compteMetier.ajouterCompte(new CompteCourant("1", new Date(),10000, new Client(1L), 100));
-	compteMetier.ajouterCompte(new CompteEpargne("3", new Date(),55000, new Client(2L), 0.05));
-	
+//	System.out.println("******************Comptes*************************");
+//	
+//	
+//	CompteMetier compteMetier=ctx.getBean(CompteMetier.class);
+//	compteMetier.ajouterCompte(new CompteCourant("1", new Date(),9000, new Client(1L), 200));
+//	compteMetier.ajouterCompte(new CompteCourant("2", new Date(),15000, new Client(2L), 800));
+//	compteMetier.ajouterCompte(new CompteCourant("1", new Date(),10000, new Client(1L), 100));
+//	compteMetier.ajouterCompte(new CompteEpargne("3", new Date(),55000, new Client(2L), 0.05));
+//	
 }
 }

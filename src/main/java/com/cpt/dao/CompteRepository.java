@@ -6,6 +6,6 @@ import com.cpt.entities.Compte;
 
 public interface CompteRepository extends JpaRepository<Compte, String>{
 
-	Compte findOne(String codeCpt);
+	
 
 }
