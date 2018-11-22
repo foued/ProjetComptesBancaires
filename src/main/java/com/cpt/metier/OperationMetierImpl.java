@@ -7,6 +7,8 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.cpt.dao.CompteRepository;
@@ -53,10 +55,11 @@ public class OperationMetierImpl implements OperationMetier{
 		
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public Page<Operation> listeOperation(String cpt, int page, int size) {
 		// TODO Auto-generated method stub
-		return or.ListOperation(cpt, new PageRequest(page, size));
+		return or.ListOperation(cpt, new PageRequest(page, size,new Sort(Direction.DESC,"numerooperation")));
 	}
 
 }
